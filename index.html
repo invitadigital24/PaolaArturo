@@ -523,7 +523,7 @@ async function crearAlarma() {
   const unMinutoDespues = new Date(ahora.getTime() + 120000);
 
   const evento = {
-    summary: '⏰ Alarma',
+    summary: '⏰ Nuestra Boda Paola & Arturo',
     start: { dateTime: ahora.toISOString(), timeZone: 'America/Mexico_City' },
     end:   { dateTime: unMinutoDespues.toISOString(), timeZone: 'America/Mexico_City' },
     reminders: {
@@ -539,7 +539,7 @@ async function crearAlarma() {
       calendarId: 'primary',
       resource: evento
     });
-    $('#status').html('✅ Alarma creada: <a href="' + response.result.htmlLink + '" target="_blank">Ver en Calendar</a>');
+    $('#status').html('<center> ✅ Alarma creada: <a href="' + response.result.htmlLink + '" target="_blank">Ver en Calendar</a> </center>');
   } catch (e) {
     $('#status').text('❌ Error: ' + e.message);
   }
@@ -547,7 +547,7 @@ async function crearAlarma() {
 
 $('#saveDate').on('click', function() {
   if (!gapiInited || !gisInited) {
-    $('#status').text('⏳ Cargando APIs, intenta de nuevo...');
+    $('#status').text('<center> ⏳ Cargando APIs, intenta de nuevo... </center>');
     return;
   }
 
