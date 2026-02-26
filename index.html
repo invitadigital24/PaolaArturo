@@ -520,12 +520,13 @@ function gisLoaded() {
 
 async function crearAlarma() {
   const ahora = new Date();
-  const unMinutoDespues = new Date(ahora.getTime() + 120000);
+  const unMinutoDespues = new Date(ahora.getTime() + 60000);
+  const dosMinutoDespues = new Date(ahora.getTime() + 120000);
 
   const evento = {
     summary: '⏰ Nuestra Boda Paola & Arturo',
-    start: { dateTime: ahora.toISOString(), timeZone: 'America/Mexico_City' },
-    end:   { dateTime: unMinutoDespues.toISOString(), timeZone: 'America/Mexico_City' },
+    start: { dateTime: unMinutoDespues.toISOString(), timeZone: 'America/Mexico_City' },
+    end:   { dateTime: dosMinutoDespues.toISOString(), timeZone: 'America/Mexico_City' },
     reminders: {
       useDefault: false,
       overrides: [
